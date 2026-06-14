@@ -194,18 +194,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   text-decoration: none;
   border-radius: 12px;
 }
-/* Light plate so the navy-faced wordmark reads on the dark header */
+/* Dark-background wordmark (gold faces, ice-blue outline) sits straight on navy */
 .logo-plate {
   display: inline-flex;
   align-items: center;
-  background: var(--ice-light);
-  border: 1px solid var(--line-gold);
-  border-radius: 12px;
-  padding: 0.5rem 0.9rem;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+  padding: 0.25rem 0;
 }
 .wordmark {
-  height: 30px;
+  height: 34px;
   width: auto;
 }
 
