@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editor / local tooling
+.vscode/
+.idea/
+
+# Local preview helpers (machine-specific paths, not needed to deploy)
+.claude/
+
+# Logs / deps (none used, here for safety)
+node_modules/
+*.log
