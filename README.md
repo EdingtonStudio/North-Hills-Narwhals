@@ -51,6 +51,7 @@ success state, and posts nothing.
 
    ```js
    const SHEET_NAME = 'Signups';
+   const NOTIFY_EMAIL = 'chris@edington.co'; // who gets a heads-up per sign-up ('' to disable)
 
    function doPost(e) {
      const lock = LockService.getScriptLock();
@@ -63,6 +64,23 @@ success state, and posts nothing.
        }
        const p = e.parameter || {};
        sheet.appendRow([new Date(), p.name || '', p.email || '', p.best_position || '', p.last_played || '', p.neighborhood || '']);
+
+       if (NOTIFY_EMAIL) {
+         MailApp.sendEmail({
+           to: NOTIFY_EMAIL,
+           subject: 'New Narwhals sign-up: ' + (p.name || 'someone'),
+           replyTo: p.email || NOTIFY_EMAIL,
+           body: [
+             'Another one for Season 0.',
+             '',
+             'Name: ' + (p.name || ''),
+             'Email: ' + (p.email || ''),
+             'Best position: ' + (p.best_position || ''),
+             'Last played: ' + (p.last_played || ''),
+             'Neighborhood: ' + (p.neighborhood || ''),
+           ].join('\n'),
+         });
+       }
        return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);
      } finally {
        lock.releaseLock();
@@ -80,7 +98,11 @@ success state, and posts nothing.
 
 The submitted fields are: name, email, best position, last played, and
 neighborhood (optional). The script writes the header row automatically on the
-first submission.
+first submission, and emails `NOTIFY_EMAIL` on each one (with reply-to set to the
+signer, so you can reply straight to them). Set `NOTIFY_EMAIL = ''` to turn that
+off. Because of the email step, the deploy authorization prompt will also ask for
+permission to send mail as you (consumer Gmail allows ~100 emails/day, plenty
+here).
 
 > Note: Apps Script Web Apps don't send CORS headers, so the form posts with
 > `mode: "no-cors"` — the row is still written, but the browser can't read the
