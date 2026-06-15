@@ -10,7 +10,7 @@
    Each submission is appended as a row in your Google Sheet.
    Until it's set, the form runs in demo mode (shows success, posts nothing).
    ----------------------------------------------------------------- */
-const FORM_ENDPOINT = "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzudQcIUn_7j-hERoAIO_Bdu9t0RH2RbCTb7_Gnfk0SHWr75muxzo1jCOb6VsDmR8mtPg/exec";
 
 (function () {
   "use strict";
