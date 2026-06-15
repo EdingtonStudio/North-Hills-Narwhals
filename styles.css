@@ -443,21 +443,24 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .kit-card:hover { transform: translateY(-4px); border-color: var(--line-gold); }
 .kit-figure {
-  /* Product shots are on white; seat them on a light panel so they read */
-  background: linear-gradient(180deg, #FFFFFF 0%, var(--ice-light) 100%);
-  border-bottom: 3px solid var(--gold);
+  /* Isolated products float on a soft ice spotlight, no hard box */
+  background:
+    radial-gradient(ellipse 68% 62% at 50% 44%,
+      rgba(178, 213, 228, 0.30) 0%,
+      rgba(178, 213, 228, 0.12) 42%,
+      rgba(178, 213, 228, 0) 72%);
+  border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 4 / 3;
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.25rem, 3vw, 2.25rem);
 }
 .kit-figure img {
   width: auto;
   max-width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 14px 22px rgba(9, 33, 58, 0.18));
 }
 .kit-body { padding: clamp(1.4rem, 2.5vw, 2rem); }
 .kit-body .card-title { margin-bottom: 0.6rem; }
