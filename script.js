@@ -3,17 +3,19 @@
    ================================================================= */
 
 /* -----------------------------------------------------------------
-   FORMSPREE ENDPOINT  —  set this in ONE place.
-   Replace the placeholder below with your real Formspree form URL,
-   e.g. "https://formspree.io/f/abcdwxyz".
-   Until then the form runs in demo mode (shows success, posts nothing).
+   FORM ENDPOINT  —  set this in ONE place.
+   Paste your Google Apps Script Web App URL below (see README for the
+   2-minute setup). It looks like:
+   "https://script.google.com/macros/s/AKfyc.../exec"
+   Each submission is appended as a row in your Google Sheet.
+   Until it's set, the form runs in demo mode (shows success, posts nothing).
    ----------------------------------------------------------------- */
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec";
 
 (function () {
   "use strict";
 
-  const isPlaceholderEndpoint = FORMSPREE_ENDPOINT.includes("REPLACE_WITH_YOUR_FORM_ID");
+  const isPlaceholderEndpoint = FORM_ENDPOINT.includes("REPLACE_WITH_YOUR_DEPLOYMENT_ID");
 
   /* ------------------------- Mobile nav ------------------------- */
   const nav = document.querySelector(".site-nav");
@@ -115,17 +117,15 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
       }
 
       try {
-        const response = await fetch(FORMSPREE_ENDPOINT, {
+        // Apps Script Web Apps don't return CORS headers, so we use no-cors:
+        // the row is still written; we just can't read the response, so a
+        // resolved request is treated as success (a network failure rejects).
+        await fetch(FORM_ENDPOINT, {
           method: "POST",
-          headers: { Accept: "application/json" },
+          mode: "no-cors",
           body: new FormData(form),
         });
-
-        if (response.ok) {
-          showSuccess();
-        } else {
-          throw new Error("Bad response");
-        }
+        showSuccess();
       } catch (err) {
         errorEl.hidden = false;
         submitBtn.disabled = false;
