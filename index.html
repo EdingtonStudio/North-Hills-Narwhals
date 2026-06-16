@@ -12,6 +12,13 @@
   <meta name="theme-color" content="#09213A" />
   <meta name="geo.region" content="US-PA" />
   <meta name="geo.placename" content="North Hills, Pittsburgh, Pennsylvania" />
+  <meta name="geo.position" content="40.55;-80.02" />
+  <meta name="ICBM" content="40.55, -80.02" />
+  <meta name="apple-mobile-web-app-title" content="Narwhals" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="msapplication-TileColor" content="#09213A" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Favicon: the monogram -->
   <link rel="icon" type="image/svg+xml" href="assets/Narwhals-Monogram.svg" />
@@ -26,6 +33,7 @@
   <meta property="og:image" content="https://north-hills-narwhals.vercel.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:alt" content="North Hills Narwhals wordmark" />
   <meta property="og:site_name" content="North Hills Narwhals" />
 
@@ -34,6 +42,7 @@
   <meta name="twitter:title" content="North Hills Narwhals — Adult Baseball in the North Hills of Pittsburgh" />
   <meta name="twitter:description" content="A 35-and-over adult baseball team forming in the North Hills of Pittsburgh. 0–0 all-time and undefeated. Claim a Season 0 roster spot." />
   <meta name="twitter:image" content="https://north-hills-narwhals.vercel.app/assets/og-image.png" />
+  <meta name="twitter:image:alt" content="North Hills Narwhals wordmark" />
 
   <!-- Fonts: Oswald (display) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,6 +77,76 @@
         "addressCountry": "US"
       }
     }
+  }
+  </script>
+
+  <!-- Structured data: website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "North Hills Narwhals",
+    "url": "https://north-hills-narwhals.vercel.app/",
+    "inLanguage": "en-US",
+    "description": "Adult 35-and-over baseball in the North Hills of Pittsburgh."
+  }
+  </script>
+
+  <!-- Structured data: FAQ (matches the on-page dugout FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How good do I have to be to play adult baseball with the Narwhals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Played in high school, college, or beer league since? All fine. We're aiming for fun and competitive. Range is optional, showing up is not."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the North Hills Narwhals team actually real?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's real enough that there's a website. It gets very real the moment enough names hit the list. That could be you, today, instead of mowing the lawn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where and when does the team play?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "North Hills fields, evenings and weekends, once we've got a roster. Think Ross, McCandless, Hampton, Shaler, West View, the whole 412-north stretch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's it going to cost to join?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Less than a set of irons, more than a six-pack. Real numbers once we know how many of us are in. Fields and umps aren't free, sadly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I'm 34. Can I still sign up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Close enough, we'll redshirt you. Kidding. Mostly. Sign up anyway and we'll sort it out when the season's real."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I haven't played in 15 years. Is that a problem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Perfect. So has everyone else. The first month is mostly remembering how to slide without filing a claim afterward."
+        }
+      }
+    ]
   }
   </script>
 </head>

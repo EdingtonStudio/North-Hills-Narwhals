@@ -1,0 +1,17 @@
+{
+  "name": "North Hills Narwhals",
+  "short_name": "Narwhals",
+  "description": "Adult 35-and-over baseball in the North Hills of Pittsburgh. Claim a Season 0 roster spot.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09213A",
+  "theme_color": "#09213A",
+  "icons": [
+    {
+      "src": "assets/Narwhals-Monogram.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
