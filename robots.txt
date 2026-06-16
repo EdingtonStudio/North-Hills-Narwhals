@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://north-hills-narwhals.vercel.app/sitemap.xml
