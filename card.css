@@ -1,0 +1,51 @@
+/* =================================================================
+   Founding Card maker — page styles (builds on styles.css)
+   ================================================================= */
+
+.cardmaker {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(178, 213, 228, 0.08), transparent 55%),
+    linear-gradient(180deg, var(--navy) 0%, var(--deep-navy) 100%);
+  min-height: calc(100vh - 72px);
+}
+.cardmaker-head { text-align: center; max-width: 48ch; margin-inline: auto; }
+.cardmaker-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  color: var(--text-strong);
+}
+.cardmaker-sub { margin-top: 1rem; color: var(--ice-blue); font-size: 1.0625rem; }
+
+.card-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+/* Preview side */
+.card-preview { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+.card-canvas {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 720 / 1008;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.85);
+  background: var(--deep-navy);
+}
+.card-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; }
+
+/* Form side (reuses .form-card / .field from styles.css) */
+.card-form .form-card { max-width: 480px; }
+
+@media (max-width: 860px) {
+  .card-layout { grid-template-columns: 1fr; }
+  .card-preview { order: -1; }
+  .card-form .form-card { margin-inline: auto; }
+}

@@ -690,6 +690,43 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: color 0.18s var(--ease);
 }
 .footer-play a:hover { color: var(--gold); }
+
+/* ===================== DELIGHTS (Easter eggs) =================== */
+.stat-spin { display: inline-block; animation: stat-pulse 2.6s var(--ease) infinite; }
+@keyframes stat-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.14); }
+}
+.bb {
+  position: fixed;
+  width: 26px; height: 26px;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.4));
+}
+.bb svg { width: 100%; height: 100%; display: block; }
+.clubhouse-toast {
+  position: fixed;
+  left: 50%; bottom: 26px;
+  transform: translateX(-50%) translateY(12px);
+  z-index: 9999;
+  background: var(--deep-navy);
+  border: 1px solid var(--line-gold);
+  color: var(--ice-light);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8125rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  box-shadow: 0 14px 30px -16px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.clubhouse-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 .footer-fine {
   color: var(--ice-blue);
   font-size: 0.8125rem;
