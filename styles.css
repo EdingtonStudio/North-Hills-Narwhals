@@ -676,6 +676,20 @@ ul { margin: 0; padding: 0; list-style: none; }
   max-width: 70ch;
   font-size: 0.9375rem;
 }
+.footer-play a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  color: var(--gold-light);
+  text-decoration: none;
+  transition: color 0.18s var(--ease);
+}
+.footer-play a:hover { color: var(--gold); }
 .footer-fine {
   color: var(--ice-blue);
   font-size: 0.8125rem;
